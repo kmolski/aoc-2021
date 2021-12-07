@@ -2,8 +2,6 @@
 
 {-# LANGUAGE OverloadedStrings #-}
 
-import Data.List (minimumBy)
-import Data.Ord (comparing)
 import qualified Data.Text as T
 import System.Environment (getArgs)
 
