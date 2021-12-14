@@ -80,7 +80,7 @@ func Solve(template string, insertions map[string]byte, maxSteps int) int64 {
 		window := template[i : i+2]
 		expandedWindowFreqs := Expand(window, insertions, cache, 0, maxSteps)
 		freqs = MergeCharFreqs(freqs, expandedWindowFreqs)
-		freqs[rune(window[0])] -= 1 // exclude common character of segmentA and segmentB
+		freqs[rune(window[0])] -= 1 // exclude common character of this and previous window
 	}
 
 	counts := make([]int64, 0, len(freqs)) // create slice of element frequencies to sort
