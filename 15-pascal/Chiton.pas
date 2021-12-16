@@ -10,18 +10,18 @@ var inputFile: Text;
     riskmap: RiskLevelMap;
 
 function solve(riskmap: RiskLevelMap): LongInt;
-var i, j, rowLength, vertices, count, minDistance, nextNode: LongInt;
-    cost: Array of Array of LongInt;
-    dist, prev: Array of LongInt;
+var i, j, rowLength, vertices, count, minDist, nextNode, visitedCount: LongInt;
+    dist, prev, cost: Array of LongInt;
     visited: Array of Boolean;
     V: Array of Vertex;
+    newDist: Int64;
     pi, pj: Point;
     vtx: Vertex;
 begin
     rowLength := length(riskmap[0]);
     vertices := length(riskmap) * rowLength;
     SetLength(V, vertices);
-    for i := 0 to high(riskmap) do // convert risk level to vertices
+    for i := 0 to high(riskmap) do // convert risk level map to vertices
     begin
         for j := 0 to high(riskmap[0]) do
         begin
@@ -32,28 +32,18 @@ begin
     end;
 
     // find shortest path using Dijkstra's algorithm
-    SetLength(cost, vertices, vertices);
-    for i := 0 to high(V) do
-    begin
-        for j := 0 to high(V) do
-        begin
-            pi := V[i].pos; pj := V[j].pos;
-            if ((abs(pi.x - pj.x) = 1) and (pi.y = pj.y)) or
-               ((abs(pi.y - pj.y) = 1) and (pi.x = pj.x)) then
-                cost[i, j] := V[j].risk
-            else if i = j then
-                cost[i, j] := 0
-            else
-                cost[i, j] := 2147483647;
-        end;
-    end;
-
     SetLength(dist, vertices);
     SetLength(prev, vertices);
     SetLength(visited, vertices);
+    pi := V[0].pos; 
     for i := 0 to high(V) do
     begin
-        dist[i] := cost[0, i];
+        pj := V[i].pos;
+        if ((abs(pi.x - pj.x) = 1) and (pi.y = pj.y)) or
+           ((abs(pi.y - pj.y) = 1) and (pi.x = pj.x)) then
+            dist[i] := V[i].risk
+        else
+            dist[i] := 2147483647;
         prev[i] := 0;
         visited[i] := false;
     end;
@@ -61,27 +51,50 @@ begin
     dist[0] := 0;
     visited[0] := true;
     count := 1;
+    visitedCount := 1;
 
+    Writeln();
+    SetLength(cost, vertices);
     while count < (vertices - 1) do
     begin
-        minDistance := 2147483647;
+        Write('Visited ', visitedCount, ' out of ', vertices, ' nodes'#13);
+        minDist := 2147483647;
         for i := 0 to high(V) do
-            if (dist[i] < minDistance) and not visited[i] then
+            if (dist[i] < minDist) and not visited[i] then
             begin
-                minDistance := dist[i];
+                minDist := dist[i];
                 nextNode := i;
             end;
 
         visited[nextNode] := true;
+        visitedCount += 1;
+
+        pi := V[nextNode].pos; 
+        for i := 0 to high(V) do
+        begin
+            pj := V[i].pos;
+            if ((abs(pi.x - pj.x) = 1) and (pi.y = pj.y)) or
+               ((abs(pi.y - pj.y) = 1) and (pi.x = pj.x)) then
+                cost[i] := V[i].risk
+            else if nextNode = i then
+                cost[i] := 0
+            else
+                cost[i] := 2147483647;
+        end;
+
         for i := 0 to high(V) do
             if not visited[i] then
-                if minDistance + cost[nextNode, i] < dist[i] then
+            begin
+                newDist := minDist + cost[i];
+                if newDist < dist[i] then
                 begin
-                    dist[i] := minDistance + cost[nextNode, i];
+                    dist[i] := newDist;
                     prev[i] := nextNode;
                 end;
+            end;
         Inc(count);
     end;
+    Writeln();
 
     solve := dist[high(V)]; // get total risk of path
 end;
