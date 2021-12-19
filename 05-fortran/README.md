@@ -1,6 +1,7 @@
 # [Day 5: Hydrothermal Venture](https://adventofcode.com/2021/day/5) solution
 
-NOTE: the data files have been changed from their original representation
+NOTE: the data files have been changed from their original representation:
+arrows `fx,fy -> tx,ty` converted to commas `fx,fy,tx,ty`
 
 ## Expected result
 ```

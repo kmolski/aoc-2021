@@ -1,6 +1,6 @@
 # [Day 13: Transparent Origami](https://adventofcode.com/2021/day/13) solution
 
-NOTE: The solution for part 2 is "PZFJHRFZ".
+NOTE: The solution for part 2 is "PZFJHRFZ", as shown in the `letters.txt` file.
 
 ## Expected result
 ```
