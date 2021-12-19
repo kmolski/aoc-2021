@@ -2,7 +2,7 @@
 
 NOTE: the parsing subroutine uses two Fortran 90 features: array slicing and recursive subroutines.
 Even though it is possible to emulate their behavior by adding arguments for the slice bounds and
-(exploiting compiler implementation details)[https://sites.esm.psu.edu/~ajm138/fortranexamples.html#ex1],
+[exploiting compiler implementation details](https://sites.esm.psu.edu/~ajm138/fortranexamples.html#ex1),
 this would have made the already lengthy code even longer (and less readable).
 
 To avoid recursion in the solution for part 2 (packet evaluation), we can use a property of the
