@@ -1,5 +1,20 @@
 # [Day 16: Packet Decoder](https://adventofcode.com/2021/day/16) solution
 
+NOTE: the parsing subroutine uses two Fortran 90 features: array slicing and recursive subroutines.
+Even though it is possible to emulate their behavior by adding arguments for the slice bounds and
+(exploiting compiler implementation details)[https://sites.esm.psu.edu/~ajm138/fortranexamples.html#ex1],
+this would have made the already lengthy code even longer (and less readable).
+
+To avoid recursion in the solution for part 2 (packet evaluation), we can use a property of the
+parsing algorithm - subpackets are always pushed onto the arrays after their parent packet.
+
+So, instead of calling `EVAL` on each subpacket and then performing the operation, the subpackets
+can be evaluated last-to-first, pushing their computed values to the parent packet if its value is empty,
+or updating the present value with the operation and subpacket value.
+
+To facilitate this, the `PARSE` subroutine computes the values for literal packets immediately, while the
+values for operator packets are initialized to `-1` (empty/not computed yet).
+
 ## Expected result
 ```
 $ make run

@@ -1,5 +1,7 @@
 # [Day 15: Chiton](https://adventofcode.com/2021/day/15) solution
 
+NOTE: the solution may take 10 minutes (or longer) to complete on the full input data.
+
 ## Expected result
 ```
 $ make run
@@ -30,3 +32,6 @@ Compiler date      : 2021/10/05
 Compiler CPU target: x86_64
 ...
 ```
+
+## Resources
+* [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
