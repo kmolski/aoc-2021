@@ -10,9 +10,9 @@ My Advent of Code 2021 solutions in the following languages:
   - [Day 11: Dumbo Octopus](./11-pascal)
   - [Day 15: Chiton](./15-pascal)
 - Prolog
-- Go
-- FORTRAN (adhering to the 1977 standard where possible)
+- FORTRAN (using the 1977 standard where possible)
 - Haskell
+- Go
 
 Each top-level folder contains:
 - the solution source code
