@@ -17,6 +17,10 @@ My Advent of Code 2021 solutions in the following languages:
 - FORTRAN (using the 1977 standard where possible)
 - Haskell
 - Go
+  - [Day 8: Seven Segment Search](./08-go)
+  - [Day 14: Extended Polymerization](./14-go)
+  - [Day 18: Snailfish](./18-go)
+  - [Day 20: Trench Map](./20-go)
 
 Each top-level folder contains:
 - the solution source code
