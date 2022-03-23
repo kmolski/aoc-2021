@@ -21,6 +21,8 @@ My Advent of Code 2021 solutions in the following languages:
   - [Day 14: Extended Polymerization](./14-go)
   - [Day 18: Snailfish](./18-go)
   - [Day 20: Trench Map](./20-go)
+- Python
+  - [Day 19: Beacon Scanner](./19-python)
 
 Each top-level folder contains:
 - the solution source code
