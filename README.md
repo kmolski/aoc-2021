@@ -16,6 +16,10 @@ My Advent of Code 2021 solutions in the following languages:
   - [Day 21: Dirac Dice](./21-prolog)
 - FORTRAN (using the 1977 standard where possible)
 - Haskell
+  - [Day 7: The Treachery of Whales](./07-haskell)
+  - [Day 12: Passage Pathing](./12-haskell)
+  - [Day 17: Trick Shot](./17-haskell)
+  - [Day 22: Reactor Reboot](./22-haskell)
 - Go
   - [Day 8: Seven Segment Search](./08-go)
   - [Day 14: Extended Polymerization](./14-go)
