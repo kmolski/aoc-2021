@@ -15,6 +15,10 @@ My Advent of Code 2021 solutions in the following languages:
   - [Day 13: Transparent Origami](./13-prolog)
   - [Day 21: Dirac Dice](./21-prolog)
 - FORTRAN (using the 1977 standard where possible)
+  - [Day 5: Hydrothermal Venture](./05-fortran)
+  - [Day 10: Syntax Scoring](./10-fortran)
+  - [Day 16: Packet Decoder](./16-fortran)
+  - [Day 25: Sea Cucumber](./25-fortran)
 - Haskell
   - [Day 7: The Treachery of Whales](./07-haskell)
   - [Day 12: Passage Pathing](./12-haskell)
