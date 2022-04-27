@@ -27,6 +27,7 @@ My Advent of Code 2021 solutions in the following languages:
   - [Day 20: Trench Map](./20-go)
 - Python
   - [Day 19: Beacon Scanner](./19-python)
+  - [Day 23: Amphipod](./23-python)
 
 Each top-level folder contains:
 - the solution source code
