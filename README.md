@@ -28,6 +28,7 @@ My Advent of Code 2021 solutions in the following languages:
 - Python
   - [Day 19: Beacon Scanner](./19-python)
   - [Day 23: Amphipod](./23-python)
+  - [Day 24: Arithmetic Logic Unit](./24-python)
 
 Each top-level folder contains:
 - the solution source code
